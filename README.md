@@ -5,4 +5,10 @@ Registry detection by creating a callback routine through the CmRegisterCallback
 
 ## example
 
-![](./media/driver.gif)
+- regedit  
+
+![regedit](./media/regedit.gif)  
+
+- TotalRegistry  
+
+![TotalRegistry](./media/totalreg.gif)
