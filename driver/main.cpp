@@ -1,14 +1,14 @@
 #include "logger.hpp"
 
-VOID DriverUnload(PDRIVER_OBJECT drv_object)
+VOID DriverUnload(PDRIVER_OBJECT drvObject)
 {
 	DBG_PRINT("unload point called");
-	logger::delete_registry_routine();
+	Logger::DeleteRoutine();
 }
 
-NTSTATUS DriverEntry(PDRIVER_OBJECT drv_object, PUNICODE_STRING reg_path)
+NTSTATUS DriverEntry(PDRIVER_OBJECT drvObject, PUNICODE_STRING regPath)
 {
 	DBG_PRINT("entry point called");
-	drv_object->DriverUnload = DriverUnload;
-	return logger::install_registry_routine(drv_object);
+	drvObject->DriverUnload = DriverUnload;
+	return Logger::InstallRoutine(drvObject);
 }
